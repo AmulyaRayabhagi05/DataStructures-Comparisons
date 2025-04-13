@@ -38,7 +38,7 @@ Two collision resolution strategies were implemented:
 ## Experimental Setup
 
 Performance testing was conducted using the following parameters:
-- Data sizes: 1,000, 10,000, 100,000, and 1,000,000 elements
+- Data sizes: 1,000, 10,000, and 100,000 elements
 - Operations: Insert, Delete, Search
 - Access pattern: Random
 - Each test was repeated 10 times and the average execution time was recorded
@@ -49,37 +49,49 @@ Performance testing was conducted using the following parameters:
 
 | Data Size | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
 |-----------|----------|------------|----------------------|------------------------|
-| 1,000     | 5.2      | 3.8        | 1.2                  | 1.4                    |
-| 10,000    | 75.3     | 61.7       | 12.5                 | 14.1                   |
-| 100,000   | 986.4    | 824.9      | 124.3                | 152.8                  |
-| 1,000,000 | 12453.7  | 10872.3    | 1256.7               | 1823.5                 |
+| 1,000     |5.478     | 2.271      | 1.272                | 1.025                  |
+| 10,000    |4.994     | 4.117      | 20.972               | 3.545                  |
+| 100,000   | 59.139   | 79.407     |4319.512              | 26.830                 |
 
 ### Deletion Performance (Average time in milliseconds)
 
 | Data Size | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
 |-----------|----------|------------|----------------------|------------------------|
-| 1,000     | 4.8      | 4.2        | 1.3                  | 1.5                    |
-| 10,000    | 68.2     | 65.3       | 13.1                 | 15.7                   |
-| 100,000   | 912.6    | 895.4      | 135.2                | 173.4                  |
-| 1,000,000 | 11876.5  | 11324.8    | 1378.3               | 2134.6                 |
+| 1,000     |1.995     | 1.151      | 0.847                | 0.296                  |
+| 10,000    | 4.709    | 9.425      | 15.200               | 0.733                  |
+| 100,000   | 70.128   | 46.287      | 1837.973                | 9.491                  |
 
 ### Search Performance (Average time in milliseconds)
 
 | Data Size | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
 |-----------|----------|------------|----------------------|------------------------|
-| 1,000     | 2.7      | 2.1        | 0.8                  | 0.9                    |
-| 10,000    | 42.5     | 35.8       | 8.3                  | 9.7                    |
-| 100,000   | 574.3    | 486.2      | 87.6                 | 104.5                  |
-| 1,000,000 | 7632.8   | 6453.7     | 896.4                | 1256.8                 |
+| 1,000     | 1.357    | 0.266      | 0.802                | 0.208                  |
+| 10,000    | 2.709    | 2.649      | 19.810               | 0.627                  |
+| 100,000   | 37.834   | 56.651     | 4708.166             | 12.516                 |
 
-## Performance in an Access Pattern
+## Memory Usage
+### Insertion Memory (Average in kB)
 
-### Random Access (Search time in milliseconds for 100,000 elements)
+| Data Size | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
+|-----------|----------|------------|----------------------|------------------------|
+| 1,000     | 49.02   | 41.45      | 41.68                | 0.00                    |
+| 10,000    | 492.33  | 417.88     | 418.60               | 0.00                    |
+| 100,000   | 0.00    | 0.00       | 0.00                 | 0.00                    |
 
-| Access Pattern | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
-|----------------|----------|------------|----------------------|------------------------|
-| Random         | 574.3    | 486.2      | 87.6                 | 104.5                  |
+### Deletion Memory (Average in kB)
 
+| Data Size | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
+|-----------|----------|------------|----------------------|------------------------|
+| 1,000     | 0        | 0          | 0                    | 0                      |
+| 10,000    | 0        | 0          | 0                    | 0                      |
+| 100,000   | 0        | 0          | 0                    | 0                      |
+
+### Search Memory (Average in kB)
+| Data Size | AVL Tree | Splay Tree | Hash Table (Chaining) | Hash Table (Quadratic) |
+|-----------|----------|------------|----------------------|------------------------|
+| 1,000     | 0        | 0          | 0                    | 0                      |
+| 10,000    | 0        | 0          | 0                    | 0                      |
+| 100,000   | 0        | 0          | 0                    | 0                      |
 
 ## Analysis and Discussion
 
